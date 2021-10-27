@@ -1,3 +1,10 @@
+#heading{
+  font-size: 50px;
+  font-family: "Lucida Console";
+  text-align: center;
+  color: #b0fcff;
+}
+
 h1{
   font-size: 50px;
   font-family: "Calibri";
