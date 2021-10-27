@@ -1,1 +1,1 @@
-# PhysicsTuition
+# Physics at 'Your' Pace
