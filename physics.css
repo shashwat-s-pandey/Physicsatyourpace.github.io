@@ -52,6 +52,12 @@ img{
   border: 10px yellow dashed;
 }
 
+#myname{
+  text-align: center;
+  font-weight: 5px;
+  font-size: 30px;
+}
+
 #details{
   text-align: left;
   font-weight: 50px;
