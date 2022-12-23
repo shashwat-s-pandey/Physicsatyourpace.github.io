@@ -148,3 +148,13 @@ h3{
     width: auto;
   }
 }
+
+@media screen and (max-width: 421px) {
+  #heading {
+    font-size: 60px;
+  }
+
+  #row img{
+    width: inherit;
+  }
+}
