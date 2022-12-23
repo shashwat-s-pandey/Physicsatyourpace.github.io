@@ -99,25 +99,29 @@ h3{
   text-align: center;
 }
 
-.row{
+#row{
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .column{
-  flex: 50%;
-  padding: 55px;
+  padding: 10px;
 }
 
 #contactme{
   display: block;
-  margin-left: 300px;
-  margin-right: auto;
   width: 350px;
-  text-overflow: clip;
 }
 
 #fb{
   border-color: white;
   border-style: outset;
   border-width: 25px;
+}
+
+@media screen and (max-width: 681px) {
+  * {
+    flex-direction: column;
+  }
 }
