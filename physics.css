@@ -10,6 +10,7 @@ body{
   color: #00ffff;
   background-color: yellow;
   background-position: center;
+  width: 100%;
 }
 
 h1{
@@ -23,6 +24,7 @@ h1{
   font-family: "Times New Roman";
   font-size: 20px;
   text-align: center;
+  width: 100%;
 }
 
 img{
