@@ -1,3 +1,7 @@
+* {
+  margin: 0;
+}
+
 body{
   background: url(https://evisionthemes.com/wp-content/uploads/2020/12/pattern1-min.png);
   background-repeat: repeat;
@@ -53,7 +57,7 @@ img{
   background: url(https://wallpapercave.com/wp/wp3477365.jpg);
   box-sizing: border-box;
   margin: auto;
-  width: 600px;
+  width: 700px;
   text-align: center;
   color: white;
   font-weight: bold;
@@ -63,6 +67,10 @@ img{
   border-style: ridge;
   border-width: thick;
   border-radius: 100px;
+}
+
+.profile p:nth-of-type(5) {
+  margin-bottom: 50px;
 }
 
 #myname{
@@ -125,5 +133,18 @@ h3{
 @media screen and (max-width: 681px) {
   * {
     flex-direction: column;
+  }
+
+  .profile{
+    flex-direction: column;
+    width: auto;
+  }
+
+}
+
+@media screen and (max-width: 481px) {
+  .profile{
+    flex-direction: column;
+    width: auto;
   }
 }
