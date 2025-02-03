@@ -1,4 +1,3 @@
-import Image from "next/image";
 import "./physics.css"
 
 export default function Home() {
