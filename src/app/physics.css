@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+}
+
+body{
+  background: url(https://evisionthemes.com/wp-content/uploads/2020/12/pattern1-min.png);
+  background-repeat: repeat;
+}
+
+#heading{
+  font-size: 100px;
+  font-family: "Lucida Console";
+  text-align: center;
+  color: #00ffff;
+  background-color: yellow;
+  background-position: center;
+  width: 100%;
+}
+
+h1{
+  font-size: 50px;
+  font-family: "Calibri";
+  text-align: center;
+  color: blue;
+}
+
+.main{
+  font-family: "Times New Roman";
+  font-size: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+img{
+  margin-top: 40px;
+  width: 250px;
+  height: 250px;
+  border-radius: 200px;
+}
+
+.center{
+  font-family: "Times New Roman";
+  font-size: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#prfhead{
+  text-align: center;
+  color: green;
+  font-family: "Times New Roman";
+  font-size: 50px;
+}
+
+.profile{
+  background: url(https://wallpapercave.com/wp/wp3477365.jpg);
+  box-sizing: border-box;
+  margin: auto;
+  width: 700px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-family: "Times New Roman";
+  font-size: 30px;
+  border-color: yellow;
+  border-style: ridge;
+  border-width: thick;
+  border-radius: 100px;
+}
+
+.profile p:nth-of-type(5) {
+  margin-bottom: 50px;
+}
+
+#myname{
+  text-align: center;
+  font-weight: 10px;
+  font-size: 50px;
+}
+
+#details{
+  text-align: left;
+  font-size: 25px;
+  font-weight: 100;
+}
+
+ul{
+  font-family: "Times New Roman";
+  font-size: 25px;
+  font-style: italic;
+}
+
+#one{
+  font-size: 30px
+}
+
+h2{
+  text-align: center;
+}
+
+.pointers{
+  text-align: center;
+  font-size: 25px;
+  font-family: "Times New Roman";
+}
+
+h3{
+  text-align: center;
+}
+
+#row{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.column{
+  padding: 10px;
+}
+
+#contactme{
+  display: block;
+  width: 350px;
+}
+
+#fb{
+  border-color: white;
+  border-style: outset;
+  border-width: 25px;
+}
+
+@media screen and (max-width: 681px) {
+  * {
+    flex-direction: column;
+  }
+
+  .profile{
+    flex-direction: column;
+    width: auto;
+  }
+
+}
+
+@media screen and (max-width: 481px) {
+  .profile{
+    flex-direction: column;
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 421px) {
+  #heading {
+    font-size: 60px;
+  }
+
+  #row img{
+    width: inherit;
+  }
+}
