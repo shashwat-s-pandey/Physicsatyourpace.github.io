@@ -14,7 +14,7 @@ const Learn = () => {
           <h3 className="text-2xl font-semibold mb-3 text-gray-800">Teaching Approach</h3>
           <p className="text-lg text-gray-700 mb-2">
             My methodology centers on <span className="font-medium text-blue-800">concept-first learning</span>{`— where understanding the "why" behind every formula and phenomenon takes priority.
-            Physics becomes simpler and more enjoyable when taught using <span className="italic">real-life analogies</span>, visual aids, and intuitive problem-solving.`}
+            Physics becomes simpler and more enjoyable when taught using`} <span className="italic">real-life analogies</span>{`, visual aids, and intuitive problem-solving.`}
           </p>
           <p className="text-lg text-gray-700">
             I ensure that every concept is fully understood before progressing further — each student gets time to <span className="font-medium text-blue-800">truly grasp</span> the topic.
