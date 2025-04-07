@@ -28,7 +28,7 @@ const Card = () => {
             {
               icon: "🎯",
               title: "Targeted Preparation",
-              description: "Structured approach for Class 9–12, JEE & NEET exams."
+              description: "Structured approach for Class 11–12, JEE & NEET exams."
             },
           ].map((item, idx) => (
             <div
