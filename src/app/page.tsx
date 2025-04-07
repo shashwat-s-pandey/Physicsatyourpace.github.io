@@ -1,52 +1,146 @@
-import "./physics.css"
+"use client";
+import { useEffect, useState } from "react";
+import { Menu, X } from "lucide-react";
+import Card from "@/components/Card";
+import About from "@/components/About";
+import Learn from "@/components/Learn";
+import Testimonials from "@/components/Testimonials";
+import Register from "@/components/Register";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 export default function Home() {
+  const [scrolled, setScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+  
+    // Check scroll position immediately after DOM is ready
+    requestAnimationFrame(() => {
+      handleScroll();
+    });
+  
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleAnchorClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      const anchor = target.closest("a[href^='#']") as HTMLAnchorElement;
+  
+      if (anchor) {
+        const id = anchor.getAttribute("href")!.substring(1);
+        const el = document.getElementById(id);
+  
+        if (el) {
+          e.preventDefault();
+  
+          // Let the browser finish its event loop and layout
+          setTimeout(() => {
+            const yOffset = -100; // Match navbar height
+            const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({ top: y, behavior: "smooth" });
+          }, 0); // Or use requestAnimationFrame instead
+        }
+      }
+    };
+  
+    document.addEventListener("click", handleAnchorClick);
+    return () => document.removeEventListener("click", handleAnchorClick);
+  }, []);
+  
+  
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <div>
-      <section id="heading">
-      PHYSICS AT YOUR PACE
-      </section>
-    <div className="main">
-      <p></p>
-      <h1>Welcome to my Website!</h1>
-      <p id="one"><span>I am a teacher of Physics and I have been teaching for more than 20 years.</span></p>
-    </div>
+    <div id="Home" className="scroll-smooth">
+      <img className="flex w-full z-[-1] h-screen fixed" src="./aurora.jpg" alt="" />
 
-    <div className="prfone">
-      <p id="prfhead">Here is my Profile: </p>
-    </div>
-    <div className="profile">
-      <img src="rajeevakumarpfp.jpg" alt="Image unavailable" className="center"/>
-      <p id="myname">Rajeeva Kumar</p>
-      <p>Address: 326 Ashirwad Apartment Mayur Vihar Phase-3</p>
-      <p>City: East Delhi</p>
-      <p>State: Delhi-110096</p>
-      <p>className/Standard: Senior Secondary</p>
-    </div>
+      <nav
+        className={`fixed top-0 z-50 w-full transition-colors duration-300 border-b border-gray-500 ${
+          scrolled ? "bg-gray-800/80 backdrop-blur" : "bg-transparent"
+        }`}
+      >
+        <div className="flex items-center justify-between p-6">
+          <h1 className="text-white text-2xl md:text-4xl font-mono whitespace-nowrap overflow-hidden border-r-4 border-white animate-typing">
+            Physics at YOUR Pace
+          </h1>
 
-      <p id="details">Following are my details regarding tutoring:</p>
-    <ul>
-      <li>20+ years of experience in teaching</li>
-      <li>Qualification: in B.E. </li>
-      <li>Specialisation for NEET and JEE examinations</li>
-      <li>Focus on the concepts of className 11 and 12</li>
-    </ul>
-    <p></p>
-    <div className="pointers">
-      <h2>More than two hundred of my students have qualified in engineering and medical entrances respectively.</h2>
-      <p>My focus is on the understanding of the subject. Every topic is cleared thoroughly before proceeding for next. Each student gets sufficient time for learning and understanding.</p>
-      <p>className duration is of one hour.</p>
-      <p>Mode of className: It is both online and offline</p>
-      <p>Online classNamees can take place on Zoom or any other platform comfortable by the student.</p>
-    </div>
-    <section id="row">
-      <div className="column">
-        <img id="contactme" src="https://sites.psu.edu/curtmoore34/wp-content/uploads/sites/40170/2016/04/contactme.png" alt="Image not available"/>
+          {/* Hamburger Icon */}
+          <div className="md:hidden">
+            <button onClick={toggleMenu} className="text-yellow-300">
+              {isMenuOpen ? <X size={30} /> : <Menu size={30} />}
+            </button>
+          </div>
+
+          {/* Desktop Menu */}
+          <div className="hidden md:flex space-x-4 items-center">
+            {[
+              { href: "#Home", label: "Home" },
+              { href: "#About", label: "About" },
+              { href: "#Learn", label: "Learn" },
+              { href: "#Testimonials", label: "Testimonials" },
+              { href: "#Register", label: "Register" },
+              { href: "#Contact", label: "Contact" },
+            ].map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="font-bold text-lg px-4 py-2 rounded-md bg-gradient-to-r from-yellow-200 to-yellow-400 text-transparent bg-clip-text hover:scale-110 transition-transform duration-200"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* Mobile Menu with Slide-Down Animation */}
+        <div
+          className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${
+            isMenuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+          } bg-gray-800/90 backdrop-blur px-6`}
+        >
+          {[
+            { href: "#Home", label: "Home" },
+            { href: "#About", label: "About" },
+            { href: "#Learn", label: "Learn" },
+            { href: "#Testimonials", label: "Testimonials" },
+            { href: "#Register", label: "Register" },
+            { href: "#Contact", label: "Contact" },
+          ].map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              className="block font-bold text-lg py-2 text-yellow-300 hover:underline"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+      </nav>
+
+      <h1 className="pt-[3em] pb-5 text-white text-center font-serif text-3xl md:text-5xl">Welcome to the Abode of Physics</h1>
+      <div className="py-3 max-w-4xl mx-auto px-4">
+        <h2 className="text-2xl text-center text-white font-serif">
+          An online space dedicated to Physics home tuitions — discover what we offer, read student stories, and get started with your learning journey.
+        </h2>
       </div>
-      <div className="column">
-        <a href="https://www.facebook.com/rajeeva.kumar.9216"><img id="fb" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1200px-Facebook_f_logo_%282019%29.svg.png" alt=""/></a>
-      </div>
-    </section>
+
+      <Card />
+      <About />
+      <Learn />
+      <Testimonials />
+      <Register />
+      <Contact />
+      <Footer />
     </div>
   );
 }
