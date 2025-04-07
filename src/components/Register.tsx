@@ -148,7 +148,7 @@ export default function RegisterSection() {
 
         {submitted && (
           <div className="text-green-500 font-semibold mt-4 transition-opacity duration-300">
-            Registration successful! We'll reach out to you soon.
+            {`Registration successful! We'll reach out to you soon.`}
           </div>
         )}
       </div>

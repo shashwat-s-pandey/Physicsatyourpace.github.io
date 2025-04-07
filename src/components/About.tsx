@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 const About = () => {
@@ -9,10 +10,12 @@ const About = () => {
           
           {/* Profile Picture and Quote */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <img 
-              src="/rajeevakumarpfp.jpg" 
-              alt="Rajeeva Kumar" 
-              className="w-48 h-48 md:w-52 md:h-52 object-cover rounded-full border-4 border-white shadow-lg hover:scale-105 transition-transform duration-300 ease-in-out"
+            <Image
+                src="/rajeevakumarpfp.jpg"
+                alt="Rajeeva Kumar"
+                width={208} // md:w-52 = 208px
+                height={208} // md:h-52 = 208px
+                className="w-48 h-48 md:w-52 md:h-52 object-cover rounded-full border-4 border-white shadow-lg hover:scale-105 transition-transform duration-300 ease-in-out"
             />
             <p className="mt-6 text-gray-800 italic text-base md:text-md max-w-xs">
               “Physics is the key to understanding how our universe works — and with the right guidance, anyone can master it.”

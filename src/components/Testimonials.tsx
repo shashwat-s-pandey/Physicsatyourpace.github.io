@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 const Testimonials = () => {
@@ -9,11 +10,13 @@ const Testimonials = () => {
 
         <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
           {/* Image */}
-          <img 
-            src="/ssp.jpg" 
-            alt="Rajeeva Kumar" 
-            className="w-32 h-32 md:w-40 md:h-40 object-cover rounded-full border-4 border-white shadow-md hover:scale-105 duration-300"
-          />
+            <Image
+                src="/ssp.jpg"
+                alt="Shashwat Pandey"
+                width={160} // md:w-40 = 160px
+                height={160} // md:h-40 = 160px
+                className="w-32 h-32 md:w-40 md:h-40 object-cover rounded-full border-4 border-white shadow-md hover:scale-105 duration-300"
+            />
 
           {/* Testimonial Content */}
           <div className="italic text-gray-900 max-w-3xl text-center md:text-left">

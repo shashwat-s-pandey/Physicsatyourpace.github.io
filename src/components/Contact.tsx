@@ -7,7 +7,7 @@ const Contact = () => {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4">Let’s Connect</h2>
             <p className="text-lg text-gray-300 mb-10">
-              Reach out anytime for queries about classes, availability, or learning paths. I'm just a call or message away.
+              Reach out anytime for queries about classes, availability, or learning paths. I&apos;m just a call or message away.
             </p>
 
             <div className="space-y-6 text-left sm:text-center">

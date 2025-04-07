@@ -8,6 +8,7 @@ import Testimonials from "@/components/Testimonials";
 import Register from "@/components/Register";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import Image from "next/image";
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
@@ -61,7 +62,14 @@ export default function Home() {
 
   return (
     <div id="Home" className="scroll-smooth">
-      <img className="flex w-full z-[-1] h-screen fixed" src="./aurora.jpg" alt="" />
+      <div className="w-full z-[-1] h-screen fixed">
+        <Image
+          src="/aurora.jpg"
+          alt="Aurora background"
+          fill
+          className="z-[-1] object-cover fixed"
+        />
+      </div>
 
       <nav
         className={`fixed top-0 z-50 w-full transition-colors duration-300 border-b border-gray-500 ${
