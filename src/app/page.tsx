@@ -137,7 +137,7 @@ export default function Home() {
 
       <h1 className="pt-[3em] pb-5 text-white text-center font-serif text-3xl md:text-5xl">Welcome to the Abode of Physics</h1>
       <div className="py-3 max-w-4xl mx-auto px-4">
-        <h2 className="text-2xl text-center text-white font-serif">
+        <h2 className="text-2xl text-center text-white font-sans font-bold">
           An online space dedicated to Physics home tuitions — discover what we offer, read student stories, and get started with your learning journey.
         </h2>
       </div>

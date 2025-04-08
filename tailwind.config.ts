@@ -14,16 +14,16 @@ const config: Config = {
       },
       keyframes: {
         typing: {
-          from: { width: '0%' },
-          to: { width: '41.2%' },
+          from: { width: '0ch' },
+          to: { width: '20ch' }, // Adjust this to match character count
         },
         blink: {
           '50%': { borderColor: 'transparent' },
         },
       },
       animation: {
-        typing: 'typing 2s, blink 0.75s infinite',
-      },
+        typing: 'typing 2s steps(150), blink 0.75s step-end infinite',
+      },      
     },
   },
   plugins: [],

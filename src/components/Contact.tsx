@@ -18,7 +18,7 @@ const Contact = () => {
               </div>
               <div className="flex items-center justify-center space-x-4">
                 <span className="text-yellow-400 text-2xl">📧</span>
-                <span className="text-lg">rajeeva.tutor@gmail.com</span>
+                <span className="text-lg">rajeevakumar1962@gmail.com</span>
               </div>
               <div className="flex items-center justify-center space-x-4">
                 <span className="text-yellow-400 text-2xl">📍</span>
