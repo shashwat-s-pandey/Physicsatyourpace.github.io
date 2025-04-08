@@ -30,7 +30,7 @@ const Testimonials = () => {
         {/* Testimonial 2 (Image on right) */}
         <div className="flex flex-col md:flex-row-reverse items-center md:items-start gap-6 mb-10">
           <Image
-            src="/ssp2.jpg"
+            src="/ssp2.JPG"
             alt="Satvik Pandey"
             width={160}
             height={160}
